@@ -1,49 +1,30 @@
-import './styles.css';
+import "./styles.css";
+import todoListGenerator from "./modules/todoListGenerator.js";
+import addNewTask from "./modules/addNewTask.js";
+import localDataU from "./modules/localData.js";
 
-const todoList = [
-  {
-    description: 'First item',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Third item',
-    completed: true,
-    index: 3,
-  },
-  {
-    description: 'Second Item.',
-    completed: false,
-    index: 2,
-  },
+let todoList = [];
 
-  {
-    description: 'Fourth Item.',
-    completed: true,
-    index: 4,
-  },
-];
+// checked local storage
+const localData = JSON.parse(localStorage.getItem("todolist"));
 
-//  this code will sort the items according to their index property in accending order.
-todoList.sort((item1, item2) => item1.index - item2.index);
-
-function listItemGenerator(item) {
-  if (item.completed) {
-    // if the todo item is completed then mark the checkbox.
-    return `<li class="box">
-    <span class="list completed-item"><input class="checkbox" type="checkbox" checked />${item.description}</span>
-    <span><i class=" icon fa-solid fa-ellipsis-vertical"></i></span>
-</li>`;
-  }
-  // if the item is not completed then unchecked the checkbox.
-  return `<li class="box">
-    <span class="list "><input class="checkbox" type="checkbox" />${item.description}</span>
-    <span><i class=" icon fa-solid fa-ellipsis-vertical"></i></span>
-</li>`;
+if (localData) {
+  todoList = localData;
 }
 
-const itemsContainer = document.querySelector('.list-container');
-
-itemsContainer.innerHTML = todoList
-  .map((list) => listItemGenerator(list))
-  .join('');
+//  render to html
+todoListGenerator(todoList);
+const taskInput = document.querySelector("#task-input");
+taskInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    // function add the input to the array
+    const localData = JSON.parse(localStorage.getItem("todolist"));
+    if (localData) {
+      todoList = localData;
+    }
+    addNewTask(taskInput.value, todoList);
+    taskInput.value = "";
+    localDataU(todoList);
+    todoListGenerator(todoList);
+  }
+});
