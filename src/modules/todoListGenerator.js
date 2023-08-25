@@ -1,5 +1,4 @@
 import localDataU from './localData.js';
-import updateCompleted from './updateCompleted.js';
 import sortListAfter from './sortListAfter.js';
 import updateTaskDesc from './updateTaskDesc.js';
 import deleteTask from './deleteTask.js';
@@ -64,8 +63,10 @@ export default function todoListGenerator(arrayTodoList) {
     });
 
     input.addEventListener('focusout', () => {
-      menuIcon.classList.remove('hidden');
-      deleteIcon.classList.add('hidden');
+      setTimeout(() => {
+        menuIcon.classList.remove('hidden');
+        deleteIcon.classList.add('hidden');
+      }, 400);
     });
   });
 
@@ -80,5 +81,4 @@ export default function todoListGenerator(arrayTodoList) {
       todoListGenerator(arrayTodoList);
     });
   });
-
 }
