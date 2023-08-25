@@ -1,5 +1,5 @@
 export default function sortListAfter(arr, n) {
-  const taskList = document.querySelectorAll(".task-item");
+  const taskList = document.querySelectorAll('.task-item');
   const index = [];
   taskList.forEach((task) => {
     index.push(Number(task.id) - 1);
