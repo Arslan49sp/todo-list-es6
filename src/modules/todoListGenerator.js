@@ -81,14 +81,4 @@ export default function todoListGenerator(arrayTodoList) {
     });
   });
 
-  // update array if checkbox checked
-  const checkboxes = document.querySelectorAll('.checkbox');
-  checkboxes.forEach((box) => {
-    box.addEventListener('change', () => {
-      const id = Number(box.getAttribute('data-id'));
-      updateCompleted(id, arrayTodoList);
-      localDataU(arrayTodoList);
-      todoListGenerator(arrayTodoList);
-    });
-  });
 }
