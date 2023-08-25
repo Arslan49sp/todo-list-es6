@@ -23,7 +23,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Awsome Book <a name="about-project"></a>
+# 📖 Todo List <a name="about-project"></a>
 
 This is a simple but useful project where user can add and remove his/her todo tasks. It maintains those tasks in the assending order. User can also mark and complete the completed tasks.
 
