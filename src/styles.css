@@ -31,6 +31,7 @@ body {
 
 .box {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   font-size: 17px;
   padding: 20px 35px;
@@ -82,4 +83,33 @@ body {
 .completed-item {
   text-decoration: line-through;
   color: var(--highlight-color);
+}
+
+.hidden {
+  display: none;
+  z-index: -1;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  font-size: 17px;
+  height: 25px;
+  padding: 0 10px;
+  resize: none;
+  overflow: hidden;
+}
+
+.input::-webkit-scrollbar {
+  width: 0;
+}
+
+.fa-trash:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: gray;
 }
