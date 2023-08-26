@@ -1,4 +1,5 @@
 import localDataU from './localData.js';
+import updateCheckboxStatus from './updateCheckboxStatus.js';
 import sortListAfter from './sortListAfter.js';
 import updateTaskDesc from './updateTaskDesc.js';
 import deleteTask from './deleteTask.js';
@@ -77,6 +78,17 @@ export default function todoListGenerator(arrayTodoList) {
       const id = Number(button.getAttribute('data-id'));
       arrayTodoList = deleteTask(id, arrayTodoList);
       sortListAfter(arrayTodoList, arrayTodoList.length);
+      localDataU(arrayTodoList);
+      todoListGenerator(arrayTodoList);
+    });
+  });
+
+  // update array if checkbox checked
+  const checkboxes = document.querySelectorAll('.checkbox');
+  checkboxes.forEach((box) => {
+    box.addEventListener('change', () => {
+      const id = Number(box.getAttribute('data-id'));
+      updateCheckboxStatus(id, arrayTodoList);
       localDataU(arrayTodoList);
       todoListGenerator(arrayTodoList);
     });

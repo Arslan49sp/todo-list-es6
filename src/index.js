@@ -2,6 +2,7 @@ import './styles.css';
 import todoListGenerator from './modules/todoListGenerator.js';
 import addNewTask from './modules/addNewTask.js';
 import localDataU from './modules/localData.js';
+import clearCompletedTasks from './modules/clearCompletedTasks.js';
 
 let todoList = [];
 
@@ -14,6 +15,10 @@ if (localData) {
 
 //  render to html
 todoListGenerator(todoList);
+
+// Clear all the complete teaks
+clearCompletedTasks(todoList);
+
 const taskInput = document.querySelector('#task-input');
 taskInput.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {

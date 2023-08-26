@@ -115,8 +115,6 @@ You can deploy this project using:
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-- [ ] **Add and romove todo tasks**
 - [ ] **Drag and drop functionality**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
