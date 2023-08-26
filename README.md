@@ -8,6 +8,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+- [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -50,6 +51,14 @@ This is a simple but useful project where user can add and remove his/her todo t
 <li>View all todo</li>
 <li>Remove completed todo.</li>
 </ul>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://arslan49sp.github.io/todo-list-es6/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
