@@ -1,4 +1,4 @@
-export default function updateCompleted(inputId, array) {
+export default function updateCheckboxStatus(inputId, array) {
   array.map((item) => {
     if (item.index === inputId) {
       if (item.completed === false) {
